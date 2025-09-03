@@ -1,0 +1,258 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>MakeMyTrip Redesign</title>
+
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+        <style type="text/tailwindcss">
+            body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            }
+
+            .search-container {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            }
+
+            .nav-link.active {
+            border-bottom: 2px solid #3B82F6;
+            color: #3B82F6;
+            }
+
+            .nav-link {
+            transition: color 0.2s, border-bottom 0.2s;
+            }
+
+            .form-input {
+            border: 1px solid #E5E7EB;
+            transition: border-color 0.2s;
+            }
+
+            .form-input:focus-within {
+            border-color: #3B82F6;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+            }
+
+            .date-display,
+            .traveller-display {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            font-weight: 600;
+            }
+        </style>
+    </head>
+
+    <body class="bg-gray-50">
+        <div class="relative min-h-screen">
+
+            <header class="absolute top-0 left-0 right-0 z-20 py-4 px-8">
+            <div class="container mx-auto flex justify-between items-center text-white">
+                
+                <div class="flex items-center">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC70Fq4C3XP-5YZsiN5AtSsqtri2xbLS66O-nQ1hW8dv4SeHvDReQD45cUlRcHuaRxywWHwmxG_zs4I0E7rFXKT3TyEu0WMl3v51vEW-RRcv9AfN-n6PTIlNZLTexOsQ9D8uoCve8TzBiff1Czv3kREAcIo-yvlB1P2vtaplCF5MoS0q-dHDO7AQizoveQ5Fr27qO-tNlmzH5Vj6CdnO0SDpI3QE2o8E6Ua58BCDGhrpPWAIWFBv4kqv5bElX2EYznHEuYIGYu8-6Q"
+                    alt="Company Logo" class="h-8 mr-12" />
+                
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-white hover:text-gray-200 text-sm font-medium">Flights</a>
+                    <a href="#" class="text-white hover:text-gray-200 text-sm font-medium">Hotels</a>
+                    <a href="#" class="text-white hover:text-gray-200 text-sm font-medium">Trains</a>
+                    <a href="#" class="text-white hover:text-gray-200 text-sm font-medium">Buses</a>
+                    <a href="#" class="text-white hover:text-gray-200 text-sm font-medium">Holidays</a>
+                    <a href="#" class="text-white hover:text-gray-200 text-sm font-medium">Cabs</a>
+                    
+                    <div class="relative">
+                    <button class="text-white hover:text-gray-200 text-sm font-medium flex items-center">
+                        More <span class="material-icons text-lg">expand_more</span>
+                    </button>
+                    </div>
+                </nav>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg text-sm flex items-center">
+                    <span class="material-icons mr-1 text-base">person</span>
+                    Login or Create Account
+                </button>
+                <button class="flex items-center text-white text-sm font-medium">
+                    <span class="material-icons text-lg mr-1">language</span>
+                    IN <span class="material-icons text-lg">expand_more</span>
+                </button>
+                </div>
+            </div>
+            </header>
+
+            <div class="absolute inset-0 z-0">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTJsN-ymwLDQy4PAeoJ3MJkIdeIapRsMAKhmSE1CwdcO_B-1nI-ksZIkXmhpAu-Zq78GJlSBNNadtGeWEAwtGEc8HLPmpj0XpWWT1BxoLCsCDdEtZRO1i_HqX6Cyw2ZMgOqcgmQOQFrFy4TuyQe4BUCAfHGejVNzZxka2kHExolzn5p6E1b6ayzM0xbED_kz8Rb-GVYolTekxxsEg08V_Q7S1fNahgrBaj4qo1Gh2waGwGPqdZORw4Sx5_Qx3dXfnzYIMVeKPVz90"
+                alt="Tropical beach background" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-black opacity-40"></div>
+            </div>
+
+            <main class="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 pt-24 pb-12">
+            <div class="w-full max-w-5xl">
+
+                <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-3">
+
+                <div class="flex border-b border-gray-200">
+                    <button class="flex items-center py-4 px-6 nav-link active">
+                    <span class="material-icons mr-2 text-blue-600">flight</span>
+                    <span class="font-semibold">Flights</span>
+                    </button>
+                    <button class="flex items-center py-4 px-6 nav-link text-gray-500 hover:text-blue-600">
+                    <span class="material-icons mr-2">hotel</span>
+                    <span class="font-semibold">Hotels</span>
+                    </button>
+                    <button class="flex items-center py-4 px-6 nav-link text-gray-500 hover:text-blue-600">
+                    <span class="material-icons mr-2">train</span>
+                    <span class="font-semibold">Trains</span>
+                    </button>
+                    <button class="flex items-center py-4 px-6 nav-link text-gray-500 hover:text-blue-600">
+                    <span class="material-icons mr-2">directions_bus</span>
+                    <span class="font-semibold">Buses</span>
+                    </button>
+                </div>
+
+                <div class="p-6">
+                    <div class="flex items-center space-x-4 mb-6">
+                    <label class="flex items-center cursor-pointer">
+                        <input type="radio" name="tripType" checked class="form-radio text-blue-600" />
+                        <span class="ml-2 text-gray-700 font-medium">One Way</span>
+                    </label>
+                    <label class="flex items-center cursor-pointer">
+                        <input type="radio" name="tripType" class="form-radio text-blue-600" />
+                        <span class="ml-2 text-gray-700 font-medium">Round Trip</span>
+                    </label>
+                    <label class="flex items-center cursor-pointer">
+                        <input type="radio" name="tripType" class="form-radio text-blue-600" />
+                        <span class="ml-2 text-gray-700 font-medium">Multi City</span>
+                    </label>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-10 gap-2 items-end">
+
+                    <div class="col-span-1 md:col-span-4 relative">
+                        <div class="flex items-center">
+                        <div class="w-1/2 pr-1">
+                            <label for="from" class="block text-sm font-medium text-gray-500 mb-1">From</label>
+                            <div class="form-input rounded-lg p-3 bg-gray-50">
+                            <p class="text-2xl font-bold text-gray-800">Delhi</p>
+                            <p class="text-xs text-gray-500 truncate">DEL, Delhi Airport, India</p>
+                            </div>
+                        </div>
+                        <div class="w-1/2 pl-1">
+                            <label for="to" class="block text-sm font-medium text-gray-500 mb-1">To</label>
+                            <div class="form-input rounded-lg p-3 bg-white border-blue-500 shadow-lg">
+                            <p class="text-2xl font-bold text-gray-800">Bengaluru</p>
+                            <p class="text-xs text-gray-500 truncate">BLR, Bengaluru International Airport...</p>
+                            </div>
+                        </div>
+                        </div>
+                        <button class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+                                    w-8 h-8 bg-white border border-gray-300 rounded-full flex items-center justify-center 
+                                    text-gray-600 hover:bg-gray-100 transition z-10 shadow">
+                        <span class="material-icons text-base">swap_horiz</span>
+                        </button>
+                    </div>
+
+                    <div class="col-span-1 md:col-span-2">
+                        <label for="departure" class="block text-sm font-medium text-gray-500 mb-1">Departure</label>
+                        <div class="form-input rounded-lg p-3 flex items-center space-x-2 bg-gray-50">
+                        <p class="date-display text-gray-800">4</p>
+                        <div>
+                            <p class="font-semibold text-gray-800">Sep'25</p>
+                            <p class="text-xs text-gray-500">Thursday</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="col-span-1 md:col-span-2">
+                        <label for="return" class="block text-sm font-medium text-gray-500 mb-1 flex items-center">
+                        Return <span class="material-icons text-lg ml-1">expand_more</span>
+                        </label>
+                        <div class="form-input rounded-lg p-3 bg-gray-50">
+                        <p class="text-sm text-gray-400">Tap to add a return date</p>
+                        </div>
+                    </div>
+
+                    <div class="col-span-1 md:col-span-2">
+                        <label for="travellers" class="block text-sm font-medium text-gray-500 mb-1 flex items-center">
+                        Travellers & Class <span class="material-icons text-lg ml-1">expand_more</span>
+                        </label>
+                        <div class="form-input rounded-lg p-3 bg-gray-50">
+                        <p class="traveller-display text-gray-800">1</p>
+                        <p class="text-xs text-gray-500">Traveller</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="text-center mt-8">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-20 rounded-lg text-lg shadow-lg transform hover:scale-105 transition-transform">
+                    SEARCH
+                </button>
+                </div>
+            </div>
+
+            <div class="w-full max-w-5xl mt-12 bg-black/20 backdrop-blur-sm rounded-xl p-4">
+                <div class="flex justify-between items-center">
+                <p class="text-white font-semibold">Special Promotions Just For You</p>
+                <a href="#" class="text-white font-semibold text-sm hover:underline">View All</a>
+                </div>
+            </div>
+
+            <div class="w-full max-w-5xl mt-8">
+                <h2 class="text-2xl font-bold text-white mb-6">Trending Destinations</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                
+                <div class="bg-white rounded-lg overflow-hidden shadow-md group">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuWAtJHYpN5e5XWm9uBFG9YR1LDXAAYjXaR7XaCJ-JWPfFGBpaTzUbXp1_OR-bQbnI8iOoMaqJucOdD-89vOvnQRC732kwG5ZXm4w5DA-0HAttOG-0P6jg_8JW-bYuz_12Po4QJRPcvylamypSLQuFYNCgLlszd6Zbp6c7ZhvK_XqonLcFKuPrhf-e6xYFwss8ygxWGZJhqlBGuJaeJ7e7-DtXXrXrOWaNFROSG4_AkFvf7FwsPjJBE8oCWgi-rnxH7_EWUJUz04s"
+                        alt="Dubai city skyline"
+                        class="w-full h-32 object-cover transition-transform group-hover:scale-105" />
+                    <div class="p-4">
+                    <h3 class="font-bold text-gray-800">Dubai</h3>
+                    <p class="text-sm text-gray-600">Flights, Hotels, Activities</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg overflow-hidden shadow-md group">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVFil_tWf6OGggia7pwcqCoUPVDSBnAIq80GcK0zK9NVHZ1YoNaHjEoZJS7pI8IRiQWbJT5uMTo-Vs-qMdkPlSnfGzgyHxF7UT6fJZxogvaoxwzgXdokGVgTE54PotWxyXXgGF-lfbjNgmYzpSBi_xGXDheyUwPp1dFywQspt0ChC4vi92sSOMSTlHmu63w5zfVvm60PqukchKBeZyasusQUOMI6SwntU7X8hyJjB1U4MRuuQutoAAaNjWHwABoq_7LDuQlAijfWs"
+                        alt="Beach in Goa"
+                        class="w-full h-32 object-cover transition-transform group-hover:scale-105" />
+                    <div class="p-4">
+                    <h3 class="font-bold text-gray-800">Goa</h3>
+                    <p class="text-sm text-gray-600">Flights, Hotels, Activities</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg overflow-hidden shadow-md group">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmYW2kboEmxUFSPvn2_6h6OZEqSq01YrJykLH37xQsLSnleTceITWyuMy0ubEPpl0AxU2kCOyAfNwRqaiWyU4emidascKngd0ieQOVggyLRg-nU1oKvzJ6tpesOWy4RJsGZa8w-EgiYoabNPokCdLXiumZBhAVoH3hKn_YIRZs-Nh1sH5MuKz-tZ7hG8IzdfhwZ_M1MDwd_d5VIbIf1HFcDPGCV9T0LZp5v8aB6Qffh2MVVParf9JMF6BAUqmoek0tGT_oqOG-xo4"
+                        alt="Bangkok temple"
+                        class="w-full h-32 object-cover transition-transform group-hover:scale-105" />
+                    <div class="p-4">
+                    <h3 class="font-bold text-gray-800">Bangkok</h3>
+                    <p class="text-sm text-gray-600">Flights, Hotels, Activities</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg overflow-hidden shadow-md group">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS3cbpELJNZNcLq9aQiiuMePEfDl4Yfnx_GHwhlA4-qEpOgTXq8K4fo-EEHHviELk2iWK59iikox6uf9pm3HuoTVWSsvzuryd9ZgsrrcqUPo04WO1oNk2hyw4d0OfOf5mZrNY1uHyuBFrQkyORoGCmupfwwL64Bm8USNMVW1FsTQL2BQlt0zOuBsZ2E1Z7z1Kk_LpnsTrARPgpYdj4JTQWumelD9LPuMjhcJaj8H-2BFetIDrhHadbEgHlEtqPpOVD6TYsW4J2E9Y"
+                        alt="Singapore city view"
+                        class="w-full h-32 object-cover transition-transform group-hover:scale-105" />
+                    <div class="p-4">
+                    <h3 class="font-bold text-gray-800">Singapore</h3>
+                    <p class="text-sm text-gray-600">Flights, Hotels, Activities</p>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+            </main>
+        </div>
+    </body>
+</html>
